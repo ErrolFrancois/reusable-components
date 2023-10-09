@@ -1,4 +1,5 @@
 # reusable-components
+# React + Vite
 Input elements and analog clock created for reusing purposes.
 The Analog clock code can be used to be used as starter code and recreated and suited to your own style.
 I tried to build the clock in a way that allows it to resize proportionately.
