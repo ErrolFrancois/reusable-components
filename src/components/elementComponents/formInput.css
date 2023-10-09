@@ -1,0 +1,223 @@
+:root {
+  --background-color: #b5eded;
+  --button-color: #b5eded;
+  --border-color: #b5eded;
+  --inputDivWidth: 380px;
+  --inputDivHeight: 100px;
+}
+
+.inputDiv {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 0 auto;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 400;
+  font-size: 18px;
+  width: var(--inputDivWidth);
+  height: var(--inputDivHeight);
+  padding: 10px;
+}
+
+.comment {
+  height: calc(var(--inputDivHeight) * 1.5);
+}
+
+.reqLabel::before {
+  content: "*";
+  color: red;
+  font-size: 18px;
+}
+
+.hidden {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+input,
+select {
+  margin: 0 auto;
+  width: calc(var(--inputDivWidth) - 10px);
+  height: 40px;
+  padding: 5px;
+  border-radius: 8px;
+  border: 1px solid #495e57;
+  font-size: 18px;
+}
+
+textarea {
+  margin: 0 auto;
+  width: calc(var(--inputDivWidth) - 18px);
+  height: 80px;
+  padding: 5px;
+  border-radius: 8px;
+  border: -3px solid #495e57;
+  font-size: 18px;
+  resize: none;
+}
+
+input:hover,
+select:hover,
+.comment:hover {
+  cursor: pointer;
+  /* background-color: #edefee;
+  border: 4px solid rgb(181, 237, 237);
+  box-shadow: 3px 5px 5px rgba(73, 94, 87, 0.749); */
+}
+
+input:focus,
+select:focus,
+.comment:focus {
+  background-color: #edefee;
+  border: 4px solid var(--border-color);
+  box-shadow: 3px 5px 5px rgba(73, 94, 87, 75%);
+}
+
+.radioDiv {
+  display: inline-flex;
+  flex-direction: row; /*Change to column to stack radio*/
+  align-items: center;
+  padding: 5px 0;
+  > label {
+    cursor: pointer;
+    width: max(50%);
+    display: inline-flex;
+    flex-direction: row; /*Change to column to stack radio*/
+    justify-content: start; /*Align start, center, or end*/
+    align-items: center;
+    /* Below is the style for the original input*/
+    > input {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.checkboxDiv label {
+  cursor: pointer;
+  width: fit-content;
+  display: inline-flex;
+  flex-direction: row; /*Change to column to stack radio*/
+  justify-content: start; /*Align start, center, or end*/
+  align-items: center;
+  /* Below is the style for the original input*/
+  > input {
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Custom radion input*/
+.custom-checkInput {
+  /*Outer border style*/
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 5px solid #d9d9d9;
+  margin: 5px;
+  padding: 0;
+}
+
+/* Add and style the tick mark for the checkbox & radio group */
+.radioDiv .custom-checkInput.checked::before {
+  content: ""; /* Unicode for check mark */
+}
+
+.checkboxDiv .custom-checkInput.checked::before {
+  content: "\2714"; /* Unicode for check mark */
+}
+
+.custom-checkInput.checked::before {
+  /*Inner checked style*/
+  font-size: 20px;
+  font-weight: 600;
+  color: #000; /* Color for the tick mark */
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: var(--background-color); /* Color for the checked circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*--------------------------------------------------*/
+
+.filled-input {
+  border: 4px solid #495e57;
+  background-color: #b5eded;
+}
+
+.error-input {
+  border: 4px solid #ff0000;
+  background-color: #ee997240;
+}
+
+.error-message {
+  display: block;
+  text-align: left;
+  font-size: 16px;
+  font-style: italic;
+  color: red;
+}
+
+.eyeIconOuter {
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  top: 41%;
+  right: 15px;
+}
+
+.eyeIcon > svg {
+  margin: auto;
+  width: 25px;
+  height: 25px;
+  stroke: #495e57;
+  fill: bisque;
+  > circle {
+    fill: #495e57;
+  }
+}
+
+.button {
+  margin: 20px auto;
+  height: 50px;
+  border: none;
+  border-radius: 25px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  font-weight: 700;
+  background-color: var(--button-color);
+}
+
+.button.lg {
+  width: var(--inputDivWidth);
+}
+
+.button.sm {
+  width: 200px;
+}
+
+.button:hover {
+  background-color: #f4ce14cc;
+  box-shadow: 3px 5px 5px rgba(73, 94, 87, 75%);
+  cursor: pointer;
+}
+
+#hero button:hover {
+  box-shadow: 3px 5px 5px #d9d9d9;
+}
+
+.button-back:hover {
+  background-color: #ee9972;
+  cursor: pointer;
+}
+
+.button:active {
+  background-color: #495e57;
+  color: #d9d9d9;
+}

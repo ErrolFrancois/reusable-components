@@ -1,0 +1,91 @@
+/* :root {
+  --clock-width: 200px;
+} */
+
+.clock {
+  width: var(--clock-width);
+  height: var(--clock-width);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  border: 2px solid black;
+  margin: 20px auto;
+  position: relative;
+}
+
+.date {
+  --rotation: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  text-align: center;
+  transform: rotate(var(--rotation));
+  font-weight: 700;
+  color: var(--backgroundColoredText);
+  font-size: calc(var(--clock-width) / 24);
+}
+
+.clock .hourNumber {
+  --rotation: 0;
+  position: absolute;
+  text-align: center;
+  transform: rotate(var(--rotation));
+  font-weight: 600;
+  font-size: calc(var(--clock-width) / 14);
+}
+
+.minuteNumber {
+  --rotation: 0;
+  position: absolute;
+  text-align: center;
+  transform: rotate(var(--rotation));
+  font-weight: 400;
+  font-size: calc(var(--clock-width) / 48);
+}
+
+.minuteNumber.each-30deg {
+  font-size: calc(var(--clock-width) / 36);
+  font-weight: 800;
+}
+
+.clock .hand {
+  --rotation: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  background-color: black;
+  border: 1px solid white;
+  border-top-left-radius: calc(var(--clock-width) / 30);
+  border-top-right-radius: calc(var(--clock-width) / 30);
+  transform-origin: bottom;
+  z-index: 10;
+  transform: translateX(-50%) rotate(calc((var(--rotation)) * 1deg));
+}
+
+.clock::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  z-index: 11;
+  width: calc(var(--clock-width) / 20);
+  height: calc(var(--clock-width) / 20);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clock .hand.second {
+  width: calc(var(--clock-width) / 120);
+  height: 45%;
+  background-color: red;
+}
+.clock .hand.minute {
+  width: calc(var(--clock-width) / 45);
+  height: 40%;
+  background-color: black;
+}
+.clock .hand.hour {
+  width: calc(var(--clock-width) / 30);
+  height: 35%;
+  background-color: black;
+}

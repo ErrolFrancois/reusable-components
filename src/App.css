@@ -1,0 +1,45 @@
+:root {
+  --backgroundColor: linear-gradient(
+    to right,
+    hsl(200, 100%, 50%),
+    hsl(175, 100%, 50%)
+  );
+  --backgroundColoredText: hsl(188, 100%, 50%);
+  --clock-width: 350px;
+}
+
+html {
+  background: var(--backgroundColor);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 60px;
+  color: var(--backgroundColoredText);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  width: fit-content;
+  height: fit-content;
+  padding: 0 60px;
+  border-radius: 10px;
+  > form > h1 {
+    margin: 10px;
+  }
+}
